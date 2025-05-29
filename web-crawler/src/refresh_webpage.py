@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from playsound import playsound
+import winsound
 
 # Set up the WebDriver (ensure you have the correct path)
 driver = webdriver.Chrome()  # Use webdriver.Firefox() if using Firefox
@@ -12,7 +12,7 @@ url = "https://medium.com/"
 def check_for_available_tests():
     """Check if 'available tests' text is present on the page."""
     try:
-        if "available tests" in driver.page_source.lower():
+        if "reading" in driver.page_source.lower():
             return True
     except NoSuchElementException:
         pass
@@ -25,8 +25,8 @@ try:
 
         if check_for_available_tests():
             print("🎉 Available test slot found! Stopping refresh.")
-            playsound("alert.mp3")  # Play alert sound
-            break  # Stop the script
+            winsound.PlaySound("D:\worksppace\webcrawler\web-crawler\src\siren-alert-96052.wav", winsound.SND_FILENAME)  # Play alert sound
+            # break  # Stop the script
 
         time.sleep(300)  # Wait for 5 minutes (300 seconds) before refreshing
 except KeyboardInterrupt:

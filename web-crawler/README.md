@@ -39,4 +39,3 @@ You can download ChromeDriver from the official Chrome WebDriver site:
 
 Now, you can run Selenium without specifying the WebDriver path manually! 🚀  
 
-Would you like a guide on automating login for the **DVSA booking site** as well? 😊
